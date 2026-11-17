@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ergón | Bolsos y Marroquinería de Autor · Artesanal y Sostenible</title>
+  <meta name="description" content="Bolsos, mochilas y marroquinería ergonómica elaborada a mano en Colombia con cuero curtido vegetal y lonas orgánicas. Calidad duradera y diseño consciente.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#F4F6F4',
+              100: '#E6ECE6',
+              200: '#CDD9CE',
+              600: '#4F6352',
+              700: '#3D4F40',
+              800: '#2A382C',
+              900: '#1B261D',
+            },
+            terracotta: {
+              50: '#FCF5F3',
+              100: '#F7E7E2',
+              500: '#D97757',
+              600: '#B8593A',
+              700: '#944227',
+              800: '#75321B',
+            },
+            sand: {
+              50: '#FAF8F5',
+              100: '#F4EFEA',
+              200: '#EBE3D5',
+              300: '#DDD3C1',
+              400: '#C7BBA4',
+              800: '#4A3D29',
+            },
+            leather: {
+              DEFAULT: '#965825',
+              dark: '#6E3D16',
+              light: '#BF7F32',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-grain text-stone-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- AVISO SUPERIOR PROMOCIONAL -->
+  <div class="bg-olive-900 text-stone-200 text-[11px] sm:text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2 border-b border-olive-800">
+    <span class="inline-flex items-center gap-1.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <strong>ENVÍO GRATIS</strong> en Colombia por compras superiores a $180.000 COP
+    </span>
+    <span class="hidden md:inline text-stone-400">·</span>
+    <span class="hidden md:inline text-stone-300">Garantía artesanal de 1 año en costuras y herrajes</span>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-custom border-b border-stone-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO ERGÓN -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-olive-800 to-olive-900 text-amber-100 flex items-center justify-center font-serif text-xl font-bold shadow-md group-hover:scale-105 transition-transform duration-300 border border-olive-700">
+            E
+          </div>
+          <div>
+            <span class="font-serif text-2xl font-bold tracking-wider text-stone-900 block leading-tight">ERGÓN</span>
+            <span class="text-[9px] uppercase tracking-widest text-stone-500 font-semibold block">Marroquinería de Autor</span>
+          </div>
+        </a>
+
+        <!-- ENLACES DE NAVEGACIÓN DESKTOP -->
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-stone-600">
+          <a href="#catalogo" class="hover:text-amber-900 transition-colors">Colección</a>
+          <a href="#historia" class="hover:text-amber-900 transition-colors">Manifiesto</a>
+          <a href="#taller" class="hover:text-amber-900 transition-colors">El Taller</a>
+          <a href="#sostenibilidad" class="hover:text-amber-900 transition-colors">Sostenibilidad</a>
+          <a href="#testimonios" class="hover:text-amber-900 transition-colors">Reseñas</a>
+        </nav>
+
+        <!-- ACCIONES RÁPIDAS -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Botón WhatsApp Directo -->
+          <a href="https://wa.me/573101234567?text=Hola%20Erg%C3%B3n,%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20sus%20bolsos%20artesanales." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 transition-colors" title="Asesoría directa por WhatsApp">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.584 1.79.88 2.788.881 3.179 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.765-5.767zm0 10.428c-.85 0-1.68-.228-2.404-.662l-.172-.103-1.785.468.477-1.741-.113-.18c-.477-.759-.728-1.639-.727-2.544.002-2.571 2.093-4.662 4.664-4.662 2.571 0 4.662 2.092 4.663 4.663 0 2.571-2.092 4.661-4.664 4.661z"/></svg>
+            <span>Asesoría</span>
+          </a>
+
+          <!-- Botón del Carrito -->
+          <button id="openCartBtn" type="button" class="relative bg-stone-900 hover:bg-stone-800 text-stone-100 p-2.5 sm:px-4 sm:py-2.5 rounded-xl flex items-center gap-2 shadow-sm transition-all duration-200 active:scale-95" aria-label="Abrir Carrito">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="hidden sm:inline text-xs font-semibold">Carrito</span>
+            <!-- Contador Dinámico -->
+            <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-amber-500 text-stone-900 text-[10px] font-black flex items-center justify-center transform transition-transform duration-200 scale-0">
+              0
+            </span>
+          </button>
+
+          <!-- Menú Móvil Botón -->
+          <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 text-stone-600 hover:text-stone-900 rounded-lg hover:bg-stone-100" aria-label="Abrir menú">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-stone-200 bg-[#FAF8F5] px-6 py-4 space-y-3">
+      <a href="#catalogo" class="block py-2 text-sm font-semibold text-stone-700 hover:text-amber-900">Catálogo de Bolsos</a>
+      <a href="#historia" class="block py-2 text-sm font-semibold text-stone-700 hover:text-amber-900">Manifiesto y Filosofía</a>
+      <a href="#taller" class="block py-2 text-sm font-semibold text-stone-700 hover:text-amber-900">El Proceso Artesanal</a>
+      <a href="#sostenibilidad" class="block py-2 text-sm font-semibold text-stone-700 hover:text-amber-900">Sostenibilidad</a>
+      <a href="#testimonios" class="block py-2 text-sm font-semibold text-stone-700 hover:text-amber-900">Reseñas de Clientes</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION CON FOTOGRAFÍA REAL -->
+    <section class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-stone-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Textos del Hero -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-100/80 border border-olive-200 text-olive-800 text-xs font-bold uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-olive-600"></span>
+              Colección Hecha a Mano · Colombia
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-900 font-bold leading-tight">
+              Bolsos creados para <span class="italic font-normal text-olive-800">armonizar</span> con tu cuerpo y resistir el tiempo.
+            </h1>
+
+            <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              En <strong class="text-stone-800 font-semibold">Ergón</strong> unimos la ciencia de la ergonomía con la nobleza de la marroquinería artesanal. Cuero curtido con extractos vegetales, lonas de algodón orgánico y pesos milimétricamente distribuidos para cuidar tu espalda.
+            </p>
+
+            <!-- Botones de Acción -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#catalogo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-100 font-semibold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
+                <span>Explorar la Colección</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              </a>
+              <a href="#taller" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-stone-100 text-stone-800 font-semibold text-sm border border-stone-300 shadow-sm transition-all duration-200">
+                <span>Conoce el Proceso Artesanal</span>
+              </a>
+            </div>
+
+            <!-- Sellos de Confianza -->
+            <div class="pt-8 border-t border-stone-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-olive-100 text-olive-800 flex items-center justify-center text-sm font-bold flex-shrink-0">🌱</span>
+                <div>
+                  <h4 class="text-xs font-bold text-stone-800">100% Curtido Vegetal</h4>
+                  <p class="text-[10px] text-stone-500">Cero cromo tóxico</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm font-bold flex-shrink-0">⚖️</span>
+                <div>
+                  <h4 class="text-xs font-bold text-stone-800">Diseño Ergonómico</h4>
+                  <p class="text-[10px] text-stone-500">Distribución de carga</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-stone-200 text-stone-800 flex items-center justify-center text-sm font-bold flex-shrink-0">🇨🇴</span>
+                <div>
+                  <h4 class="text-xs font-bold text-stone-800">Hecho en Colombia</h4>
+                  <p class="text-[10px] text-stone-500">Taller artesanal local</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-sm font-bold flex-shrink-0">📦</span>
+                <div>
+                  <h4 class="text-xs font-bold text-stone-800">Envíos Seguros</h4>
+                  <p class="text-[10px] text-stone-500">Cobertura nacional</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Fotografía Real Destacada del Hero -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md bg-stone-100 rounded-3xl overflow-hidden border border-stone-300/80 shadow-2xl group">
+              
+              <!-- Badge de autenticidad -->
+              <div class="absolute top-4 right-4 bg-stone-900/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-stone-700 shadow-md text-[11px] font-bold text-amber-200 flex items-center gap-1.5 z-10">
+                <span>★</span> Pieza de Autor
+              </div>
+
+              <!-- Foto Real de Portada Hero (Bolso Artesanal) -->
+              <div class="w-full aspect-[4/5] overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80" 
+                  alt="Tote Botánico Ergón artesanal" 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                >
+              </div>
+
+              <!-- Ficha flotante inferior -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-stone-200/80 shadow-lg flex items-center justify-between">
+                <div>
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 mb-0.5">Bolso Insignia</div>
+                  <h4 class="font-serif font-bold text-stone-900 text-sm">Tote Botánico Verde Oliva</h4>
+                  <p class="text-[11px] text-stone-500">Lona orgánica & Cuero vegetal</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-[10px] text-stone-400 block font-medium">Precio</span>
+                  <span class="font-bold text-stone-900 text-sm">$ 245.000 COP</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CATÁLOGO & TIENDA (#catalogo) -->
+    <section id="catalogo" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de la Sección -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-olive-700 block mb-2">Colección Activa</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Nuestros Bolsos de Autor</h2>
+          <p class="text-stone-500 text-sm mt-1 max-w-lg">
+            Fotografías de nuestros modelos reales. Cada pieza es cortada, ensamblada y terminada a mano en nuestro taller en Bogotá.
+          </p>
+        </div>
+
+        <!-- Contador y Estado -->
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-stone-200/80 text-stone-700" id="productCount">
+            Cargando piezas...
+          </span>
+        </div>
+      </div>
+
+      <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+      <div class="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/80 shadow-sm mb-10 space-y-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4 justify-between">
+          
+          <!-- Buscador en tiempo real -->
+          <div class="relative w-full sm:w-80">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Buscar por bolso, material o color..." 
+              class="w-full pl-10 pr-10 py-2.5 bg-stone-50 hover:bg-stone-100/80 focus:bg-white text-stone-800 text-xs rounded-xl border border-stone-200 focus:border-stone-500 focus:ring-1 focus:ring-stone-500 transition-all outline-none"
+            >
+            <button id="clearSearchBtn" type="button" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+
+          <!-- Filtros de Categorías -->
+          <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
+            <button type="button" class="category-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-stone-800 text-stone-100 shadow-sm" data-category="all">
+              Todos
+            </button>
+            <button type="button" class="category-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="totes">
+              Totes & Hombro
+            </button>
+            <button type="button" class="category-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="bandoleras">
+              Bandoleras
+            </button>
+            <button type="button" class="category-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="mochilas">
+              Mochilas
+            </button>
+            <button type="button" class="category-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="marroquineria">
+              Pequeña Marroquinería
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GRID DE PRODUCTOS -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <!-- Renderizado dinámicamente vía js/app.js -->
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN: MANIFIESTO Y FILOSOFÍA ERGÓN (#historia) -->
+    <section id="historia" class="py-16 sm:py-24 bg-stone-100/80 border-t border-b border-stone-200/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-900 block mb-2">Nuestro Origen</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
+            Del griego ἔργον: labor, obra y acción consciente
+          </h2>
+          <p class="text-stone-600 text-base leading-relaxed">
+            Creemos que un bolso no debería ser una carga pesada que deforme tu postura ni un objeto desechable de temporada. Diseñamos para que cada gramo cuente, combinando la anatomía del cuerpo humano con los materiales más nobles de la tierra.
+          </p>
+        </div>
+
+        <!-- 3 Pilares -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-white rounded-2xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-olive-100 text-olive-800 flex items-center justify-center font-bold text-xl mb-5">
+              ⚖️
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Ergonomía Aplicada</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Calculamos el centro de gravedad, el ancho de los tirantes y la curvatura dorsal para disipar el peso de forma uniforme sobre clavículas y caderas, previniendo contracturas al caminar o viajar.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-xl mb-5">
+              🌱
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Curtido 100% Vegetal</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Nuestras pieles se curten durante 40 días en barricas con taninos naturales extraídos de cortezas de árboles (mimosa y castaño). Libres de sales de cromo y metales pesados contaminantes.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold text-xl mb-5">
+              🧵
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Confección Lenta & Justa</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Cada bolso requiere entre 6 y 14 horas de labor manual. Trabajamos en series cortas en Bogotá junto a maestros marroquineros colombianos con condiciones de trabajo dignas y transparentes.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: EL PROCESO ARTESANAL (#taller) CON FOTOGRAFÍAS REALES -->
+    <section id="taller" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-olive-700 block mb-2">Paso a Paso en el Taller</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">El Oficio de la Marroquinería Viva</h2>
+        <p class="text-stone-500 text-sm mt-2">
+          La belleza de lo auténtico reside en el tiempo y el cuidado de los detalles manuales que una máquina jamás podría replicar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Paso 1 -->
+        <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[4/3] bg-stone-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=600&q=80" 
+              alt="Selección de piel natural de curtido vegetal" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <span class="absolute top-3 left-3 w-7 h-7 rounded-full bg-stone-900 text-amber-200 font-serif text-xs font-bold flex items-center justify-center shadow">
+              01
+            </span>
+          </div>
+          <div class="p-5">
+            <h4 class="font-serif text-base font-bold text-stone-800 mb-1.5">Selección de la Piel</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Revisamos cada pliego de cuero curtido al tanino vegetal celebrando las vetas orgánicas auténticas del material.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[4/3] bg-stone-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=600&q=80" 
+              alt="Corte manual de patrones anatómicos en cuero" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <span class="absolute top-3 left-3 w-7 h-7 rounded-full bg-stone-900 text-amber-200 font-serif text-xs font-bold flex items-center justify-center shadow">
+              02
+            </span>
+          </div>
+          <div class="p-5">
+            <h4 class="font-serif text-base font-bold text-stone-800 mb-1.5">Corte Anatómico Manual</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Utilizamos cuchillas tradicionales de marroquinería para cortar con precisión milimétrica cada panel ergonómico.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[4/3] bg-stone-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" 
+              alt="Costura manual a dos agujas con hilo encerado" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <span class="absolute top-3 left-3 w-7 h-7 rounded-full bg-stone-900 text-amber-200 font-serif text-xs font-bold flex items-center justify-center shadow">
+              03
+            </span>
+          </div>
+          <div class="p-5">
+            <h4 class="font-serif text-base font-bold text-stone-800 mb-1.5">Costura Encerada a Mano</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Pespuntes a dos agujas que cruzan el cuero entrelazándose para garantizar una durabilidad de por vida.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col justify-between group">
+          <div class="aspect-[4/3] bg-stone-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?auto=format&fit=crop&w=600&q=80" 
+              alt="Bruñido artesanal con cera de abejas natural" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            >
+            <span class="absolute top-3 left-3 w-7 h-7 rounded-full bg-stone-900 text-amber-200 font-serif text-xs font-bold flex items-center justify-center shadow">
+              04
+            </span>
+          </div>
+          <div class="p-5">
+            <h4 class="font-serif text-base font-bold text-stone-800 mb-1.5">Bruñido con Cera Natural</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Sellamos los cantos con cera de abeja y fricción manual de madera para crear bordes suaves que acarician tu piel.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN: TESTIMONIOS Y RESEÑAS (#testimonios) -->
+    <section id="testimonios" class="py-16 sm:py-24 bg-olive-900 text-stone-100 border-t border-olive-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2">Experiencias Reales</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Quienes ya caminan con Ergón</h2>
+          <p class="text-stone-300 text-sm mt-2">
+            La mejor prueba de nuestra promesa ergonómica es el día a día de nuestros clientes en toda Colombia.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-olive-800/80 rounded-2xl p-7 border border-olive-700/80 flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+              <p class="text-stone-200 text-sm italic leading-relaxed mb-6">
+                "Uso la Mochila Kora a diario para ir a la oficina con mi portátil. El cambio en la espalda fue inmediato: la carga no tira hacia atrás y el cuero huele increíble. Es una obra de arte."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-olive-700">
+              <div class="w-10 h-10 rounded-full bg-olive-700 text-amber-200 font-bold flex items-center justify-center text-xs">
+                MC
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">Mariana Cardona</h4>
+                <p class="text-[10px] text-stone-400">Bogotá D.C. · Compró Mochila Kora Miel</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-olive-800/80 rounded-2xl p-7 border border-olive-700/80 flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+              <p class="text-stone-200 text-sm italic leading-relaxed mb-6">
+                "Compré el Tote Botánico Verde Oliva hace 6 meses. La lona resistió lluvias y el cuero de las asas se amoldó suavemente a mi hombro sin dejar marcas rojas. Totalmente recomendado."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-olive-700">
+              <div class="w-10 h-10 rounded-full bg-olive-700 text-amber-200 font-bold flex items-center justify-center text-xs">
+                AR
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">Andrés Restrepo</h4>
+                <p class="text-[10px] text-stone-400">Medellín, Antioquia · Compró Tote Botánico</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-olive-800/80 rounded-2xl p-7 border border-olive-700/80 flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+              <p class="text-stone-200 text-sm italic leading-relaxed mb-6">
+                "La atención por WhatsApp fue muy amable y el envío a Cali tardó solo 2 días. El paquete llegó con empaque de tela reutilizable sin plástico. Se siente el cariño de la confección."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-olive-700">
+              <div class="w-10 h-10 rounded-full bg-olive-700 text-amber-200 font-bold flex items-center justify-center text-xs">
+                SO
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">Sofía Osorio</h4>
+                <p class="text-[10px] text-stone-400">Cali, Valle del Cauca · Compró Bandolera Altiplano</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: NEWSLETTER & CUPÓN -->
+    <section class="py-16 bg-[#FAF8F5] border-t border-stone-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm relative overflow-hidden">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-900 block mb-2">Comunidad Consciente</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mb-3">
+            Únete al Círculo Ergón y obtén 10% OFF
+          </h3>
+          <p class="text-stone-600 text-xs sm:text-sm max-w-lg mx-auto mb-6">
+            Recibe acceso anticipado a nuestras ediciones limitadas de marroquinería y consejos sobre el cuidado ecológico de tus bolsos.
+          </p>
+
+          <form id="newsletterForm" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+            <input 
+              type="email" 
+              id="newsletterEmail" 
+              required 
+              placeholder="Escribe tu correo electrónico..." 
+              class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-800 placeholder-stone-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800"
+            >
+            <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-stone-900 hover:bg-stone-800 text-stone-100 rounded-xl text-xs font-bold tracking-wider uppercase transition-colors flex-shrink-0">
+              Suscribirme
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-stone-300 text-xs border-t border-stone-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Info de Marca -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-xl bg-olive-700 text-amber-100 flex items-center justify-center font-serif text-lg font-bold">
+              E
+            </div>
+            <span class="font-serif text-2xl font-bold text-white tracking-wider">ERGÓN</span>
+          </div>
+          <p class="text-stone-400 leading-relaxed text-xs">
+            Bolsos y marroquinería de autor diseñados bajo principios ergonómicos y elaborados a mano con materiales sostenibles en Bogotá, Colombia.
+          </p>
+          <div class="text-stone-400 space-y-1">
+            <p>📍 Taller: Chapinero, Bogotá D.C.</p>
+            <p>💬 WhatsApp: +57 (310) 123-4567</p>
+            <p>✉️ hola@ergonbolsos.com</p>
+          </div>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Colección</h4>
+          <ul class="space-y-2.5 text-stone-400">
+            <li><a href="#catalogo" class="hover:text-amber-300 transition-colors">Totes & Bolsos de Hombro</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-300 transition-colors">Bandoleras Cruzadas</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-300 transition-colors">Mochilas Ergonómicas</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-300 transition-colors">Billeteras y Accesorios</a></li>
+          </ul>
+        </div>
+
+        <!-- Compromiso & Cuidados -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Garantía & Sostenibilidad</h4>
+          <ul class="space-y-2.5 text-stone-400">
+            <li><a href="#historia" class="hover:text-amber-300 transition-colors">Curtido Vegetal sin Cromo</a></li>
+            <li><a href="#taller" class="hover:text-amber-300 transition-colors">Guía de Cuidado del Cuero</a></li>
+            <li><a href="#testimonios" class="hover:text-amber-300 transition-colors">Garantía Artesanal de 1 Año</a></li>
+            <li><a href="#catalogo" class="hover:text-amber-300 transition-colors">Envíos y Devoluciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Pagos Seguros en Colombia -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Medios de Pago</h4>
+          <p class="text-stone-400 text-xs mb-3">
+            Aceptamos compras seguras en línea y pagos directos en Colombia:
+          </p>
+          <div class="flex flex-wrap gap-2 text-[10px] font-bold text-stone-300">
+            <span class="px-2.5 py-1 rounded bg-stone-800 border border-stone-700">Nequi</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800 border border-stone-700">Daviplata</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800 border border-stone-700">Bancolombia</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800 border border-stone-700">WhatsApp Pay</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800 border border-stone-700">Tarjetas Débito/Crédito</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-stone-500 text-[11px] gap-4">
+        <p>© 2026 ERGÓN Marroquinería de Autor. Todos los derechos reservados.</p>
+        <p>Hecho con amor y diseño consciente en Colombia 🇨🇴</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================= -->
+  <!-- MODALES Y DRAWERS -->
+  <!-- ======================================================= -->
+
+  <!-- 1. CARRITO DESLIZANTE (SLIDE-OVER DRAWER) -->
+  <div id="cartBackdrop" class="hidden fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 transition-opacity duration-300"></div>
+  
+  <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col transform translate-x-full drawer-transition">
+    <!-- Header del Carrito -->
+    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-[#FAF8F5]">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <h3 class="font-serif font-bold text-lg text-stone-900">Tu Carrito Ergón</h3>
+      </div>
+      <button id="closeCartBtn" type="button" class="p-2 text-stone-400 hover:text-stone-800 hover:bg-stone-100 rounded-full transition-colors" title="Cerrar Carrito">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Barra de Envío Gratis -->
+    <div class="px-5 py-3 bg-olive-50 border-b border-olive-100 text-xs">
+      <p id="freeShippingText" class="text-olive-900 mb-1.5 font-medium">Calculando envío...</p>
+      <div class="w-full h-1.5 bg-olive-200/80 rounded-full overflow-hidden">
+        <div id="freeShippingBar" class="h-full bg-olive-600 rounded-full transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Contenido / Items del Carrito -->
+    <div class="flex-grow overflow-y-auto p-5 space-y-2">
+      <!-- Estado Vacío -->
+      <div id="cartEmptyState" class="py-16 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-stone-100 text-stone-400 rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </div>
+        <h4 class="font-serif text-lg font-bold text-stone-800 mb-1">Tu carrito está vacío</h4>
+        <p class="text-xs text-stone-500 max-w-xs mx-auto mb-6">Aún no has agregado ninguno de nuestros bolsos artesanales.</p>
+        <a href="#catalogo" onclick="document.getElementById('closeCartBtn').click();" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-stone-800 text-stone-100 rounded-xl text-xs font-semibold hover:bg-stone-900 transition-colors">
+          Explorar Colección
+        </a>
+      </div>
+
+      <!-- Lista Dinámica de Items -->
+      <div id="cartItemsContainer" class="hidden"></div>
+    </div>
+
+    <!-- Footer con Totales y Checkout -->
+    <div id="cartFooter" class="p-5 border-t border-stone-200 bg-[#FAF8F5] space-y-4">
+      <div class="space-y-1.5 text-xs">
+        <div class="flex justify-between text-stone-500">
+          <span>Subtotal</span>
+          <span id="cartSubtotal" class="font-medium text-stone-800">$ 0 COP</span>
+        </div>
+        <div class="flex justify-between text-stone-500">
+          <span>Envío estimado en Colombia</span>
+          <span id="cartShipping" class="font-medium text-stone-800">Gratis</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-stone-900 pt-2 border-t border-stone-200">
+          <span>Total a Pagar</span>
+          <span id="cartTotal" class="text-base text-stone-900">$ 0 COP</span>
+        </div>
+      </div>
+
+      <button id="proceedToCheckoutBtn" type="button" class="w-full bg-stone-900 hover:bg-stone-800 text-stone-100 py-3.5 px-4 rounded-xl font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99]">
+        <span>Iniciar Pago / Checkout</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+
+      <p class="text-[10px] text-stone-400 text-center flex items-center justify-center gap-1">
+        🔒 Compra 100% protegida · Garantía de devolución 30 días
+      </p>
+    </div>
+  </div>
+
+  <!-- 2. MODAL DE VISTA RÁPIDA (QUICK VIEW) -->
+  <div id="quickViewModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="quickViewBackdrop" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity"></div>
+    
+    <div class="relative bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 z-10 shadow-2xl border border-stone-200 overflow-y-auto max-h-[90vh]">
+      <!-- Botón Cerrar -->
+      <button id="closeQuickViewBtn" type="button" class="absolute top-4 right-4 p-2 text-stone-400 hover:text-stone-800 hover:bg-stone-100 rounded-full transition-colors z-20" title="Cerrar">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Contenedor inyectado dinámicamente -->
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- 3. MODAL DE CHECKOUT MULTICANAL -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
+    <div id="checkoutBackdrop" class="fixed inset-0 bg-stone-900/70 backdrop-blur-sm transition-opacity"></div>
+    
+    <div class="relative bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 z-10 shadow-2xl border border-stone-200 overflow-y-auto max-h-[94vh]">
+      
+      <!-- Encabezado del Checkout -->
+      <div class="flex items-center justify-between pb-4 border-b border-stone-200 mb-6">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Finalizar Compra</span>
+          <h3 class="font-serif text-2xl font-bold text-stone-900">Checkout Multicanal Ergón</h3>
+        </div>
+        <button id="closeCheckoutBtn" type="button" class="p-2 text-stone-400 hover:text-stone-800 hover:bg-stone-100 rounded-full transition-colors" title="Cerrar">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="checkoutForm" class="space-y-6">
+        
+        <!-- PASO 1: DATOS DE ENVÍO -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-stone-900 text-white flex items-center justify-center text-[10px]">1</span>
+            Datos para la Entrega en Colombia
+          </h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div>
+              <label class="block text-stone-600 font-semibold mb-1">Nombre Completo *</label>
+              <input type="text" id="customerName" required placeholder="Ej: Camilo Mendoza" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800">
+            </div>
+            <div>
+              <label class="block text-stone-600 font-semibold mb-1">Número de WhatsApp *</label>
+              <input type="tel" id="customerPhone" required placeholder="Ej: 310 987 6543" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800">
+            </div>
+            <div>
+              <label class="block text-stone-600 font-semibold mb-1">Ciudad / Municipio *</label>
+              <input type="text" id="customerCity" required placeholder="Ej: Bogotá, Medellín, Cali..." class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800">
+            </div>
+            <div>
+              <label class="block text-stone-600 font-semibold mb-1">Dirección de Entrega *</label>
+              <input type="text" id="customerAddress" required placeholder="Ej: Calle 85 # 14-20 Apto 402" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-stone-600 font-semibold mb-1">Notas adicionales (opcional)</label>
+              <input type="text" id="customerNotes" placeholder="Instrucciones para la transportadora o portería..." class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-800">
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 2: SELECCIÓN DEL MÉTODO DE PAGO -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-stone-900 text-white flex items-center justify-center text-[10px]">2</span>
+            Elige tu Método de Pago Preferido
+          </h4>
+
+          <!-- Botones de Método de Pago -->
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            <button type="button" class="payment-method-tab p-3 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1" data-method="whatsapp">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.584 1.79.88 2.788.881 3.179 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.765-5.767zm0 10.428c-.85 0-1.68-.228-2.404-.662l-.172-.103-1.785.468.477-1.741-.113-.18c-.477-.759-.728-1.639-.727-2.544.002-2.571 2.093-4.662 4.664-4.662 2.571 0 4.662 2.092 4.663 4.663 0 2.571-2.092 4.661-4.664 4.661z"/></svg>
+              <span class="text-xs font-bold">WhatsApp</span>
+              <span class="text-[9px] text-stone-500">Atención 1 a 1</span>
+            </button>
+
+            <button type="button" class="payment-method-tab p-3 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1" data-method="transfer">
+              <svg class="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+              <span class="text-xs font-bold">Transferencia</span>
+              <span class="text-[9px] text-stone-500">Nequi / Bancolombia</span>
+            </button>
+
+            <button type="button" class="payment-method-tab p-3 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1" data-method="card">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              <span class="text-xs font-bold">Tarjeta / Online</span>
+              <span class="text-[9px] text-stone-500">Pasarela Segura</span>
+            </button>
+          </div>
+
+          <!-- PANEL A: WHATSAPP -->
+          <div id="paymentPanelWhatsapp" class="bg-emerald-50/80 rounded-2xl p-4 border border-emerald-200 text-xs space-y-2">
+            <div class="flex items-center gap-2 text-emerald-900 font-bold">
+              <span>🌿 Cierre Personalizado por WhatsApp</span>
+            </div>
+            <p class="text-stone-600 text-xs leading-relaxed">
+              Al confirmar, se abrirá tu WhatsApp con el resumen de tu pedido listo para enviar. Un artesano del equipo Ergón coordinará contigo el despacho y confirmará el pago.
+            </p>
+          </div>
+
+          <!-- PANEL B: TRANSFERENCIA BANCARIA -->
+          <div id="paymentPanelTransfer" class="hidden bg-stone-50 rounded-2xl p-4 border border-stone-200 text-xs space-y-3">
+            <p class="text-stone-600 font-medium">Realiza tu transferencia o pago móvil a cualquiera de nuestras cuentas oficiales en Colombia:</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-white p-3 rounded-xl border border-stone-200 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-stone-900 block">Nequi / Daviplata</span>
+                  <span class="text-stone-500 font-mono">310 123 4567</span>
+                </div>
+                <button type="button" class="copy-account-btn text-stone-600 hover:text-stone-900 text-[10px] font-bold bg-stone-100 hover:bg-stone-200 px-2 py-1 rounded" data-copy="3101234567">
+                  Copiar
+                </button>
+              </div>
+
+              <div class="bg-white p-3 rounded-xl border border-stone-200 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-stone-900 block">Bancolombia Ahorros</span>
+                  <span class="text-stone-500 font-mono">123-456789-01</span>
+                </div>
+                <button type="button" class="copy-account-btn text-stone-600 hover:text-stone-900 text-[10px] font-bold bg-stone-100 hover:bg-stone-200 px-2 py-1 rounded" data-copy="12345678901">
+                  Copiar
+                </button>
+              </div>
+            </div>
+
+            <p class="text-[10px] text-stone-500 italic">
+              * Podrás enviar el soporte de pago por WhatsApp o a nuestro correo para despacho inmediato.
+            </p>
+          </div>
+
+          <!-- PANEL C: TARJETA / PASARELA ONLINE -->
+          <div id="paymentPanelCard" class="hidden bg-stone-50 rounded-2xl p-4 border border-stone-200 text-xs space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="col-span-2">
+                <label class="block text-stone-600 font-semibold mb-1">Número de Tarjeta</label>
+                <input type="text" placeholder="•••• •••• •••• ••••" maxlength="19" class="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg font-mono">
+              </div>
+              <div>
+                <label class="block text-stone-600 font-semibold mb-1">Vencimiento (MM/AA)</label>
+                <input type="text" placeholder="12/28" maxlength="5" class="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg text-center font-mono">
+              </div>
+              <div>
+                <label class="block text-stone-600 font-semibold mb-1">CVC / CVV</label>
+                <input type="password" placeholder="•••" maxlength="4" class="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg text-center font-mono">
+              </div>
+            </div>
+            <p class="text-[10px] text-stone-500 text-center flex items-center justify-center gap-1">
+              🔒 Encriptación TLS de 256 bits · No almacenamos tus datos bancarios
+            </p>
+          </div>
+        </div>
+
+        <!-- RESUMEN DEL PEDIDO -->
+        <div class="bg-stone-50 rounded-2xl p-4 border border-stone-200">
+          <div class="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Resumen de tu compra:</div>
+          <div id="checkoutItemsList" class="space-y-1 mb-3"></div>
+          
+          <div class="pt-3 border-t border-stone-200 flex items-center justify-between">
+            <span class="text-sm font-bold text-stone-900">Total a Pagar</span>
+            <span id="checkoutTotal" class="text-lg font-black text-stone-900">$ 0 COP</span>
+          </div>
+        </div>
+
+        <!-- BOTÓN DE CONFIRMACIÓN -->
+        <button id="submitCheckoutBtn" type="submit" class="w-full bg-stone-900 hover:bg-stone-800 text-stone-100 py-4 px-6 rounded-xl font-bold text-xs tracking-wider uppercase transition-all shadow-lg active:scale-[0.99] flex items-center justify-center gap-2">
+          <span>Confirmar y Procesar Pedido</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. MODAL DE CONFIRMACIÓN DE ÉXITO -->
+  <div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-stone-900/70 backdrop-blur-sm"></div>
+    
+    <div class="relative bg-white rounded-3xl max-w-md w-full p-8 z-10 shadow-2xl border border-stone-200 text-center space-y-4">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-3xl">
+        ✓
+      </div>
+
+      <h3 class="font-serif text-2xl font-bold text-stone-900">¡Pedido Confirmado!</h3>
+      
+      <p class="text-xs text-stone-600 leading-relaxed">
+        Gracias <strong id="successClientName" class="text-stone-900"></strong> por apoyar la marroquinería artesanal y sostenible.
+      </p>
+
+      <div class="bg-stone-50 rounded-2xl p-4 text-xs space-y-1.5 text-left border border-stone-200 font-mono">
+        <div class="flex justify-between">
+          <span class="text-stone-500">Orden ID:</span>
+          <span id="successOrderId" class="font-bold text-stone-900">#ERG-0000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-500">Método:</span>
+          <span id="successPaymentMethod" class="font-bold text-stone-900">WhatsApp</span>
+        </div>
+        <div class="flex justify-between pt-1 border-t border-stone-200">
+          <span class="text-stone-500">Total:</span>
+          <span id="successTotalAmount" class="font-bold text-emerald-700">$ 0 COP</span>
+        </div>
+      </div>
+
+      <p class="text-[11px] text-stone-500">
+        Hemos recibido tu solicitud y tu bolso está siendo alistado con cuidado en nuestro taller.
+      </p>
+
+      <button id="closeSuccessBtn" type="button" class="w-full bg-stone-900 hover:bg-stone-800 text-stone-100 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors">
+        Volver a la Tienda
+      </button>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR DE NOTIFICACIONES TOAST -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
